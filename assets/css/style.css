@@ -1,0 +1,278 @@
+/* =========================================================
+   CEON - Plataforma Escolar
+   Identidade visual: azul institucional + verde de destaque
+   ========================================================= */
+
+:root {
+    --ceon-primary: #1e3a8a;
+    --ceon-primary-light: #2f52b0;
+    --ceon-primary-dark: #142a63;
+    --ceon-accent: #0ea5a4;
+    --ceon-bg: #f4f6fb;
+    --ceon-card-bg: #ffffff;
+    --ceon-text: #1f2937;
+    --ceon-text-muted: #6b7280;
+    --ceon-border: #e5e7eb;
+    --ceon-sidebar-width: 250px;
+    --ceon-danger: #dc2626;
+    --ceon-warning: #d97706;
+    --ceon-success: #16a34a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--ceon-bg);
+    color: var(--ceon-text);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Layout geral ---------- */
+.ceon-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.ceon-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-left: var(--ceon-sidebar-width);
+}
+
+/* ---------- Sidebar ---------- */
+.ceon-sidebar {
+    width: var(--ceon-sidebar-width);
+    background: linear-gradient(180deg, var(--ceon-primary-dark), var(--ceon-primary));
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1030;
+    transition: transform .25s ease;
+}
+
+.ceon-brand {
+    padding: 1.5rem 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.ceon-brand-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ceon-brand-sub {
+    font-size: .75rem;
+    opacity: .75;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.ceon-nav {
+    display: flex;
+    flex-direction: column;
+    padding: .75rem .6rem;
+    gap: .15rem;
+    overflow-y: auto;
+}
+
+.ceon-nav-link {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: rgba(255,255,255,.85);
+    padding: .6rem .85rem;
+    border-radius: .5rem;
+    font-size: .92rem;
+    transition: background .15s ease, color .15s ease;
+}
+
+.ceon-nav-link i { font-size: 1.05rem; width: 1.2rem; text-align: center; }
+
+.ceon-nav-link:hover {
+    background: rgba(255,255,255,.1);
+    color: #fff;
+}
+
+.ceon-nav-link.active {
+    background: var(--ceon-accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+.ceon-nav-logout {
+    margin-top: .5rem;
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: .85rem;
+}
+
+.ceon-sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 1020;
+}
+
+/* ---------- Topbar ---------- */
+.ceon-topbar {
+    background: var(--ceon-card-bg);
+    border-bottom: 1px solid var(--ceon-border);
+    padding: .85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1010;
+}
+
+.ceon-page-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+    color: var(--ceon-primary-dark);
+}
+
+.ceon-topbar-user { display: flex; align-items: center; }
+
+.ceon-menu-toggle { border: none; background: transparent; padding: .2rem .4rem; }
+
+/* ---------- Main / footer ---------- */
+.ceon-main {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.ceon-footer {
+    padding: 1rem 1.5rem;
+    color: var(--ceon-text-muted);
+    border-top: 1px solid var(--ceon-border);
+    background: var(--ceon-card-bg);
+}
+
+/* ---------- Cards ---------- */
+.ceon-card {
+    background: var(--ceon-card-bg);
+    border: 1px solid var(--ceon-border);
+    border-radius: .75rem;
+    padding: 1.25rem;
+    height: 100%;
+    box-shadow: 0 1px 2px rgba(16,24,40,.04);
+}
+
+.ceon-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ceon-stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: .65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    background: var(--ceon-primary);
+    flex-shrink: 0;
+}
+
+.ceon-stat-value { font-size: 1.6rem; font-weight: 700; line-height: 1; }
+.ceon-stat-label { color: var(--ceon-text-muted); font-size: .85rem; }
+
+.ceon-list-item {
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--ceon-border);
+}
+.ceon-list-item:last-child { border-bottom: none; }
+
+/* ---------- Login ---------- */
+.ceon-login-body {
+    background: linear-gradient(135deg, var(--ceon-primary-dark), var(--ceon-primary) 55%, var(--ceon-accent));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.ceon-login-wrapper { width: 100%; max-width: 420px; }
+
+.ceon-login-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 45px rgba(0,0,0,.25);
+}
+
+.ceon-login-brand {
+    text-align: center;
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ceon-login-logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ceon-primary);
+    letter-spacing: 1px;
+}
+
+.ceon-login-sub {
+    color: var(--ceon-text-muted);
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.ceon-login-hint { border-top: 1px dashed var(--ceon-border); padding-top: .5rem; }
+
+/* ---------- Badges de status ---------- */
+.badge-status-pendente { background-color: var(--ceon-warning); }
+.badge-status-atrasada { background-color: var(--ceon-danger); }
+.badge-status-concluida { background-color: var(--ceon-success); }
+
+/* ---------- Tabelas ---------- */
+.table-responsive { border-radius: .5rem; overflow: hidden; }
+.ceon-table thead { background: var(--ceon-primary); color: #fff; }
+
+/* ---------- Calendário (FullCalendar) ajustes ---------- */
+#calendario { background: #fff; border-radius: .75rem; padding: 1rem; border: 1px solid var(--ceon-border); }
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 991.98px) {
+    .ceon-sidebar {
+        transform: translateX(-100%);
+    }
+    .ceon-sidebar.show {
+        transform: translateX(0);
+    }
+    .ceon-content {
+        margin-left: 0;
+    }
+    .ceon-sidebar-overlay.show {
+        display: block;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ceon-main { padding: 1rem; }
+    .ceon-topbar { padding: .75rem 1rem; }
+    .ceon-login-card { padding: 1.75rem 1.25rem; }
+}

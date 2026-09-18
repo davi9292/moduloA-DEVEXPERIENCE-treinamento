@@ -1,0 +1,5 @@
+# Impede a execução de qualquer script dentro da pasta de uploads
+php_flag engine off
+<FilesMatch "\.(php|php3|php4|php5|php7|phtml|pl|py|cgi|asp|aspx|sh|exe)$">
+    Require all denied
+</FilesMatch>
