@@ -1,4 +1,4 @@
-# CEON — Plataforma Escolar
+# CEON — Plataforma Escolar - DAVI DE ASSIS FABRICIO
 
 Sistema de gestão escolar desenvolvido para a **Escola CESI**, com três perfis de acesso (aluno, professor e administrador).
 
